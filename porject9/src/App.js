@@ -7,6 +7,7 @@ import Adminlogin from './admin/AdminLogin';
 import Dashboard from './admin/Dash';
 import Auction from './admin/Auction';
 import Home from './components/Home';
+import LoginAndReg from "./LoginAndReg";
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
       <Route path="/loginA" element={<Adminlogin />} />
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
+      <Route path="/login" element={<LoginAndReg />}/>
+      {/* <Route path="/Home" element={<Home/>}/> */}
     </Routes>
     </BrowserRouter>
     </>
