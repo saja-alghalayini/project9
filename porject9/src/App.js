@@ -12,7 +12,7 @@ import LoginAndReg from "./LoginAndReg";
 function App() {
 
   return (
-    <> <Home/>
+    <> 
     <BrowserRouter>
     <Routes>
       <Route exact path='/user' element={<Userinfo />} />
@@ -23,7 +23,7 @@ function App() {
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
       <Route path="/login" element={<LoginAndReg />}/>
-      {/* <Route path="/Home" element={<Home/>}/> */}
+      <Route path="/" element={<Home/>}/>
     </Routes>
     </BrowserRouter>
     </>
