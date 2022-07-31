@@ -1,6 +1,6 @@
 import React from 'react';
 import './dash.css';
-
+import {Link } from 'react-router-dom';
 
 function Dashboard() {
 
@@ -15,14 +15,14 @@ function Dashboard() {
         LOGO PLZ
       </a>
       <ul className="nav__list">
-        <li className="nav__list-item">
-          <span className="nav__item-link">
-           <h2>Dashboard</h2> </span>
-        </li>
         <li className="nav__list-item nav__list-item--active">
-          <a href="#" className="nav__item-link">
+          <a className="nav__item-link w-100">
+           <h2>Dashboard</h2> </a>
+        </li>
+        <li className="nav__list-item ">
+          <Link to="/auction" className="nav__item-link">
             Auction
-          </a>
+          </Link>
         </li>
         <li className="nav__list-item">
           <a href="#" className="nav__item-link">
@@ -134,15 +134,15 @@ function Dashboard() {
 
 <div className='boddy'>
 <div class="cardd auc">
-  <div class="content ">Auctions</div>
+  <div class="contentt dd">Auctions</div>
 </div>
 
-<div class="cardd ">
-  <div class="content ">Users</div>
+<div class="cardd user ">
+  <div class="contentt dd">Users</div>
 </div>
 
 <div class="cardd comment">
-  <div class="content ">Comments</div>
+  <div class="contentt dd">Comments</div>
 </div>
 
 </div>

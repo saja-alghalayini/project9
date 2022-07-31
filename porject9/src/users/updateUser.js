@@ -25,21 +25,6 @@ function UpdateInfo() {
             <div className='text-center message' style={{ display: isSubmit ? "block" : "none" }}>
                 <p>Your Information has been updated successfully</p>
             </div>
-
-            <div class="single-slider section-overly slider-height2 d-flex align-items-center"
-                data-background="assets/img/hero/about.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <p className='hero-text'>Update Your Profile</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <div className='databox form' style={{ marginRight: '70%' }}>
                 {/* <form onSubmit={Update}> */}
 
@@ -65,7 +50,7 @@ function UpdateInfo() {
                 </span><br />
                 <span className='d1'>
                     <label htmlFor="" className='label2'>Password<span className='red'>*</span></label>
-                    <input type="password" className='inp' name='password' onChange={(e) => SetPassword(e.target.value)} />
+                    <input type="password" className='inp' name='password' required onChange={(e) => SetPassword(e.target.value)} />
                 </span>
                 <div style={{}}>
                     <button className='butt' onClick={Update} style={{ margintop: '30px' }}>Submit</button>
