@@ -1,7 +1,14 @@
-a {
-    color: #007ea7;
-    text-decoration: none;
+body{
+    margin: 0;
+    padding: 0;
+}  
+     
+  a {
+  color: #007ea7;
+  text-decoration: none;
 }
+
+a:hover{background-color: #003459;}
 p {
     color: #444;
     font-size: 14px;
@@ -19,45 +26,15 @@ h2 {
     color: #003459;
     margin-bottom: 10px;
 }
-table {
-    margin-top: 20px;
-    width: 100%;
-    color: #29516d;
-    font-size: 14px;
-    border-spacing: 0;
-}
-table th, table td {
-    padding: 10px;
-}
-table thead th {
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-table tbody tr:nth-of-type(odd) {
-    background-color: #f6f6f6;
-}
-table tbody tr:hover {
-    background-color: #ecf7ff;
-}
-.btn {
-    padding: 10px;
-    margin: 0 5px;
-    border: 0;
-    color: white;
-    background-color: #00a8e8;
-}
-.btn:first-child {
-    margin-left: 0;
-}
-.btn-delete {
-    background-color: #d90000;
-}
+
 /** Container */
 .app-container {
     display: flex;
     flex-flow: row wrap;
     height: 100vh;
 }
+
+a h2:hover{color: #fff;}
 /** Navigation */
 .nav {
     flex: 1;
@@ -187,22 +164,22 @@ table tbody tr:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20%;
+    gap: 15%;
     height: 100vh;
-    width: 250wh;
+    width: 230wh;
     margin-top: -15%;
   }
   
   .cardd {
-    color: rgb(4, 4, 65);
+    color: rgb(255, 255, 255);
     display: grid;
     font-weight: bold;
     place-items: center;
     position: relative;
     height: 300px;
     width: 350px;
-    background: #333;
-    /* background: url('https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+    /* background: #333; */
+    /* background-image: url('https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
     border-radius: 8px;
     overflow: hidden;
   }
@@ -230,22 +207,45 @@ table tbody tr:hover {
   .cardd::after {
     content: "";
     position: absolute;
-    /* background: #f00; */
-    background: url('https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background: gray;
+    /* background-image: url('https://images.pexels.com/photos/6077422/pexels-photo-6077422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+    background-size: cover;
     inset: 3px;
     border-radius: 8px;
   }
   
-  .cardd .content {
+  .cardd .contentt {
     z-index: 1;
   }
 
-
-  .auc{
-    background: url('https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  .auc::before{
+    background: linear-gradient(#00e5ff, #ff7300);
+  }
+ .auc::after{
+    background: url('https://images.pexels.com/photos/6077422/pexels-photo-6077422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
   }
 
-  .user{
-    /* background: #f00; */
+ .user::before{
+    background: linear-gradient(#00e5ff, #ff7300);
+  }
+ .user::after{
+    background: url('https://annabaa.org/aarticles/fileM/23/5b2b478134f2a.jpg');
+    background-size: 240px 295px;
+  }
+
+ .comment::before{
+    background: linear-gradient(#00e5ff, #ff7300);
+  }
+ .comment::after{
+    background: url('https://exempla0a.files.wordpress.com/2021/07/email-6370595_1920-1.jpg');
+    background-size: 250px 380px;
+  }
+
+  .dd{
+    background-color: rgba(255, 255, 255, 0.559);
+    color: #000000;
+    margin-top: -20%;
+    opacity: 1;
   }
   
