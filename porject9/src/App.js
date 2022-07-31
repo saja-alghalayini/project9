@@ -15,9 +15,9 @@ function App() {
 
   return (
     <> 
-   <Home/>
     <BrowserRouter>
     <Routes>
+      <Route path="/" element={<Home/>} />
     <Route path="/single/:id" element={<Single />}/>
       <Route path="/all" element={<AllPro />}/>
       <Route exact path='/user' element={<Userinfo />} />
@@ -28,7 +28,6 @@ function App() {
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
       <Route path="/login" element={<LoginAndReg />}/>
-      <Route path="/" element={<Home/>}/>
     </Routes>
     </BrowserRouter>
   </>
