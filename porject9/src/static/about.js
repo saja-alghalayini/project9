@@ -1,6 +1,8 @@
 import "./about.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function About() {
 
@@ -8,6 +10,8 @@ function About() {
 
     return (
         <>
+  <Navbar/>
+         
         <section className= "section1">
   <div className= "containere">
     <h1 className= "title about">About</h1>
@@ -169,8 +173,11 @@ function About() {
                         </div>
                     </div>
                 </div>
+                
             </div>
             {/* </div> */}
+            <div style={{marginTop:'250px'}}>
+            <Footer /></div>
         </>
     );
 }

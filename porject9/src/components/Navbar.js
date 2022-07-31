@@ -67,16 +67,16 @@ function Navbar() {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav ml-auto py-0">
-                                <a href="index.html" className="nav-item nav-link active">
+                                <a href="/" className="nav-item nav-link active">
                                     Home
                                 </a>
-                                <a href="about.html" className="nav-item nav-link">
+                                <a href="/about" className="nav-item nav-link">
                                     About
                                 </a>
-                                <a href="service.html" className="nav-item nav-link">
+                                <a href="/service" className="nav-item nav-link">
                                     Service
                                 </a>
-                                <a href="project.html" className="nav-item nav-link">
+                                <a href="/project" className="nav-item nav-link">
                                     Project
                                 </a>
                                 <div className="nav-item dropdown">
@@ -96,7 +96,7 @@ function Navbar() {
                                         </a>
                                     </div>
                                 </div>
-                                <a href="contact.html" className="nav-item nav-link">
+                                <a href="/contact" className="nav-item nav-link">
                                     Contact
                                 </a>
                             </div>
