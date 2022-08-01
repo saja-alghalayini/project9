@@ -1,44 +1,32 @@
-import axios from "axios";
+import {GET_ADMIN} from '../action/types';
 
-let user ='';
-const loginReducer=(state={error:''},action)=>{
-
-
-    switch(action.type){
-        
-        case "emailORUsername":
-            if(action.emailORUsername !==''){
-                return {...state,emailORUsername:action.emailORUsername};
-            }
-            break;
-        case "password":
-            if(action.password !==''){
-                return {...state, password:action.password}
-            }
-            break;
-        case "LOGIN":
-                const loadInfo = async () => {
-                const res = await axios.get('http://localhost/project9/porject9/backend/login.php?email='+state.emailORUsername+'&username='+state.emailORUsername+'&password='+state.password);
-                sessionStorage.clear()
-                sessionStorage.setItem("user_info", res.data);
-                console.log(res.data);
-                let user_info= sessionStorage.getItem("user_info");
-
-                if(user_info != ''){
-                    window.location.href = "/Home";
-                }
-                return {...state, error: 'Username/ email or password is invalid'}
-            
-  
-            };
-            loadInfo();
-            
-            
-        default:
-            return state;
-    }
-    
-    
-    
+const initialState = {
+    admin:'',
+    loading:true,
+    error:''
 }
-export default loginReducer;
+
+export default function(state = initialState, action){
+    switch(action.type){
+
+        case GET_ADMIN:
+            if(action.payload !== ''){
+                return{...state,
+                    admin:action.payload,
+                    loading:false,}
+            }else{
+                return{
+                    ...state,
+                    error:' email or password is invalid',
+                    loading:false,
+                }
+            }
+        case 'logout':
+            return{...state,
+                admin:'',
+                error: '',
+            }
+        default: return state
+    }
+
+}
