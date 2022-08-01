@@ -91,8 +91,13 @@ console.log(a, 'roa');
     if(daydiff>0){
     getauc();
 
-  
-    
+    gitMix();
+    if (maxPrice.user_id == user_id){
+      document.getElementById('win').style.display="block";
+   
+    }
+    document.getElementById('end').style.display='none';
+    document.getElementById('bid').style.display='block';
     if(parseInt(inf.min_price) < parseInt(submit))
     {
       document.getElementById('bid').style.display='block';
@@ -116,12 +121,9 @@ console.log(a, 'roa');
     
     
     
-    gitMix();
-    if (maxPrice.user_id == user_id){
-      document.getElementById('win').style.display="block";
-   
-    }
+
   }else{
+ 
     document.getElementById('bid').style.display='none';
     document.getElementById('end').style.display='block';
 
