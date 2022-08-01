@@ -12,7 +12,8 @@ function Single(){
   const [submit, setSubmit]=useState('');
   const [auc, setAuc]=useState('');
   const [maxPrice, setMaxPrice]=useState('');
-
+  const [userSold, setUserSold]=useState('');
+console.log(userSold, '11');
   const user_id =1;
   const gitData=()=>{
     axios.get(`http://localhost/tryproj9/php/singlePro.php?id=`+params.id)
@@ -33,27 +34,68 @@ function Single(){
    }
  
 
-
+  //  http://localhost/project-9/porject9/php/updateSold.php?id=3
  
    const gitMix=()=>{
     axios.get(`http://localhost/tryproj9/php/maxPrice.php?pro_id=`+params.id)
     .then((res)=>{
     // console.log(res.data,'res.data')
     setMaxPrice(res.data[0]);
-    console.log(maxPrice, 'roa');
+    // console.log(maxPrice, 'roa');
     })
    }
  
+ 
+    
+  // http://localhost/project-9/porject9/php/readSold.php?id=3
 
 
+  // const getUserSold=()=>{
+  //   axios.get(`http://localhost/tryproj9/php/maxPrice.php?pro_id=`+params.id)
+  //   .then((res)=>{
+  //   // console.log(res.data,'res.data')
+  //   userSold(res.data[0]);
+  //   // console.log(maxPrice, 'roa');
+  //   })
+  //  }
+
+
+  const date1 =  new Date();
+   const date11  =  date1.getTime();
+  //  console.log(date11, '1');
+  const date2 =  new Date(inf.end_date);
+  const date22  =  date2.getTime();
+
+  // const date2 = new Date(inf.end_date);
+  const Difference_In_Time = (date22 - date11);
+ console.log(Difference_In_Time , 'gg');
+  const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+ 
+ var CurrentDay = new Date(); 
+ CurrentDay=(CurrentDay.getTime());
+  var a = CurrentDay-date22;
+ var diff= a/ (1000 * 3600 * 24);
+console.log(a, 'roa');
+
+  
+   var d1 = new Date(); 
+   var d2 = new Date(inf.end_date);        
+   var diff = d2.getTime() - d1.getTime();   
+       
+   var daydiff = diff / (1000 * 60 * 60 * 24); 
+   console.log(daydiff, 'ibrahim '); 
+// console.log((inf.start_date), 'roa2');
   useEffect(()=>{
+
+
+    if(daydiff>0){
     getauc();
 
   
     
     if(parseInt(inf.min_price) < parseInt(submit))
     {
-
+      document.getElementById('bid').style.display='block';
       let id =params.id
       axios.post('http://localhost/tryproj9/php/updatePrice.php?id='+params.id+'&price='+submit)
       .then(() => {
@@ -72,13 +114,42 @@ function Single(){
     }
   
     
-    gitData()
+    
     
     gitMix();
     if (maxPrice.user_id == user_id){
       document.getElementById('win').style.display="block";
    
     }
+  }else{
+    document.getElementById('bid').style.display='none';
+    document.getElementById('end').style.display='block';
+
+    // http://localhost/project-9/porject9/php/insertSoldPro.php?user_id=100&price=1&pro_id=3
+    axios.post('http://localhost/project-9/porject9/php/updateSold.php?id='+params.id)
+    .then(() => {
+        console.log("sold!", submit,params.id);
+        
+    });
+
+    axios.post('http://localhost/project-9/porject9/php/insertSoldPro.php?user_id='+user_id+'&price='+inf.min_price+'&pro_id='+params.id)
+    .then(() => {
+        console.log("add!", submit,params.id);
+        
+    });
+    // getUserSold();
+    
+    if (maxPrice.user_id == user_id ){
+      document.getElementById('user').style.display="block";
+   
+    }
+
+  }
+
+  gitMix();
+
+    gitData()
+    
    },[submit,inf.min_price])  ;
 
 
@@ -141,17 +212,22 @@ function Single(){
               <p className="about">
                 {inf.description}
               </p>
-              
-              <div className="cart mt-4 align-items-center">
+              <div class="alert alert-danger" role="alert" id='end' style={{display:'none'}}>
+              This auction has ended!
+</div>
+              <div className="cart mt-4 align-items-center" id ='bid'>
               
                 <input className="btn  mr-2 px-4" placeholder='Bit Now' type={'number'} onChange={(e) => setNewP(e.target.value)}/>
                 <button type="" className="btn btn-block " style={{backgroundColor: '#FDBE33'}} onClick={handelPrice}>Bid Now</button><br></br>
                 <small style={{color:'red', display:'none'}} id='er'>Your bid should be more than the price</small>
                  
               
-                <i className="fa fa-heart text-muted" />
-                <i className="fa fa-share-alt text-muted" />
+              
               </div>
+              <div class="alert alert-success" role="alert" id='user' style={{display:'none'}}>
+              Congratulations!! you won this auction
+Go to your profile page to complete the purchase
+</div>
             </div>
           </div>
         </div>
