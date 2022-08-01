@@ -11,7 +11,7 @@ function Home() {
         </div>
         <div className='row'>
           {/* Carousel Start */}
-          <div className="container-fluid p-0">
+          <div className="container p-0">
             <div id="header-carousel" className="carousel slide" data-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -95,7 +95,7 @@ function Home() {
                     <img className="card-img-top" src="https://images.pexels.com/photos/159613/ghettoblaster-radio-recorder-boombox-old-school-159613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                     <div className="card-body bg-white p-4">
                       <div className="d-flex align-items-center mb-3">
-                        <a className="btn btn-primary" href="">
+                        <a className="bg-gold btn btn-primary" href="">
                           <i className="fa fa-link" />
                         </a>
                         <h5 className="m-0 ml-3 text-truncate">
@@ -125,7 +125,7 @@ function Home() {
                     <img className="card-img-top" src="https://images.pexels.com/photos/595699/pexels-photo-595699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                     <div className="card-body bg-white p-4">
                       <div className="d-flex align-items-center mb-3">
-                        <a className="btn btn-primary" href="">
+                        <a className=" bg-goldbtn btn-primary" href="">
                           <i className="fa fa-link" />
                         </a>
                         <h5 className="m-0 ml-3 text-truncate">
@@ -155,7 +155,7 @@ function Home() {
                     <img className="card-img-top" src="https://images.pexels.com/photos/1762446/pexels-photo-1762446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                     <div className="card-body bg-white p-4">
                       <div className="d-flex align-items-center mb-3">
-                        <a className="btn btn-primary" href="">
+                        <a className=" bg-goldbtn btn-primary" href="">
                           <i className="fa fa-link" />
                         </a>
                         <h5 className="m-0 ml-3 text-truncate">
@@ -185,6 +185,7 @@ function Home() {
           </div>
 
         </div>
+        
         {/* end card of auction */}
         <div className='row'>
           <Footer />
