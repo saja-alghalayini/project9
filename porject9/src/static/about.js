@@ -54,8 +54,9 @@ function About() {
             </div>
             {/* About End */}
 
+                
             {/* Team Start */}
-            <div className="container-fluid bg-secondary">
+            <div className="container-fluid bg-light ">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4 col-sm-6 mt-5">
@@ -305,7 +306,7 @@ function About() {
 
             </div> */}
             {/* </div> */}
-            <div className="mt-5">
+            <div className="mt-2">
                 <Footer /></div>
         </>
     );
