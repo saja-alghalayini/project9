@@ -7,16 +7,19 @@ import Adminlogin from './admin/AdminLogin';
 import Dashboard from './admin/Dash';
 import Auction from './admin/Auction';
 import Home from './components/Home';
-import Login from './Login';
-import Signup from './reg';
+import Single from './singlepro';
+import AllPro from './AllPro';
+import LoginAndReg from "./LoginAndReg";
 
 function App() {
 
   return (
     <> 
-    {/* <Home/> */}
     <BrowserRouter>
     <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/single/:id" element={<Single />}/>
+      <Route path="/all" element={<AllPro />}/>
       <Route exact path='/user' element={<Userinfo />} />
       <Route path='/updateInfo' element={<UpdateInfo />} />
       <Route path='/about' element={<About />} />
@@ -27,11 +30,36 @@ function App() {
       <Route path="/log" element={<Login/>}/>
         <Route path="/register" element={<Signup/>}/>
       {/* <Route path="/Home" element={<Home/>}/> */}
+      <Route path="/login" element={<LoginAndReg />}/>
     </Routes>
     </BrowserRouter>
-    </>
+  </>
 
   );
 }
 export default App;
 
+// import React from 'react';
+// import CountdownTimer from './Component/CountdownTimer';
+// import './App.css';
+
+// export default function App() {
+//   const THREE_DAYS_IN_MS = 0 * 24 * 60 * 60 * 1000;
+//   const SEVEN_DAYS_IN_MS = 7 * 24 * 60 * 60 * 1000;
+//   const NOW_IN_MS = new Date().getTime();
+
+//   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+//   const dateTimeAfterSevenDays = NOW_IN_MS + SEVEN_DAYS_IN_MS;
+
+//   return (
+//     <div>
+//       <h1>Countdown Timer</h1>
+
+//       <h2>Expires after 3 days!!!</h2>
+//       <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+
+//       <h2>Expires after 7 days!!!</h2>
+//       <CountdownTimer targetDate={dateTimeAfterSevenDays} />
+//     </div>
+//   );
+// }

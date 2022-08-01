@@ -1,11 +1,28 @@
 import React from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
 import './auction.css';
-function Auction() {
+import {Link } from 'react-router-dom';
 
+
+
+function Auction(props) {
+  const [aution, setAution] = useState([]);
+  useEffect(() => {
+    axios.get(`http://localhost/redux-project9/API/adminauction.php`)
+      // console.log(aa)
+      .then((res) => {
+        //  console.log(res)
+        const info = res.data;
+        setAution(info);
+        // console.log('info=', info);
+      });
+
+  })
 
     return(
         <>
-       <>
+
   <link
     href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet"  type="text/css" />
   <div className="app-container">
@@ -15,8 +32,8 @@ function Auction() {
       </a>
       <ul className="nav__list">
         <li className="nav__list-item">
-          <span className="nav__item-link">
-           <h2>Dashboard</h2> </span>
+          <Link to="/dashboard" className="nav__item-link">
+           <h2>Dashboard</h2> </Link>
         </li>
         <li className="nav__list-item nav__list-item--active">
           <a href="#" className="nav__item-link">
@@ -57,7 +74,7 @@ function Auction() {
             <li className="utility-bar__list-item">
               <a href="#" className="utility-bar__item-link">
                 {/* by Arthur Shlain https://thenounproject.com/search/?q=mail&i=396565               */}
-                <svg
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                   version="1.2"
@@ -72,7 +89,7 @@ function Auction() {
                     fill="#999"
                     d="M10,66h16v24l24-24h40V10H10V66z M26,26h48v8H26V26z M26,42h48v8H26V42z"
                   />
-                </svg>
+                </svg> */}
                 {/*               Messages */}
               </a>
             </li>
@@ -116,76 +133,43 @@ function Auction() {
         </div>
       </nav>
       <main className="content">
-        <h1>Contacts</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
-          perspiciatis!
-        </p>
-        <h2>Subheading</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores
-          hic, magnam deserunt ex voluptatum, ducimus consectetur et aut nobis
-          quod maxime odit itaque natus ipsam quisquam quo inventore laudantium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-          voluptates fuga debitis explicabo voluptatum deleniti?
-        </p>
+        <h1>Auctions</h1>
+        <button className="bttn btn-add">Add </button>
         <table>
           <thead>
             <tr>
+              <th>ID</th>
               <th>Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zip</th>
-              <th>Actions</th>
+              <th>image</th>
+              <th>Description</th>
+              <th>Minimam Price</th>
+              <th>Top Price</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <a href="#">Keenan Staffieri</a>
-              </td>
-              <td>keenan@example.com</td>
-              <td>555 ABC St.</td>
-              <td>San Diego</td>
-              <td>CA</td>
-              <td>55555</td>
-              <td>
-                <button className="btn">Edit</button>
-                <button className="btn btn-delete">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#">Sean Staffieri</a>
-              </td>
-              <td>sean@example.com</td>
-              <td>555 XYZ Ave.</td>
-              <td>Los Angeles</td>
-              <td>CA</td>
-              <td>55555</td>
+            
+            {aution?.map((info) =>
+            <>
+            <tr className='td-data' key={info}>
+              <th>{info.id}</th>
+              <th>{info.name}</th>
+              <th><img src={info.img} style={{width:'100px', height:'100px'}}/></th>
+              <th>{info.description}</th>
+              <th>{info.min_price}</th>
+              <th>{info.top_price}</th>
+              <th>{info.start_date}</th>
+              <th>{info.end_data}</th>
               <td>
                 <button className="btn">Edit</button>
                 <button className="btn btn-delete">Delete</button>
               </td>
             </tr>
-            <tr>
-              <td>
-                <a href="#">Ziggy Staffieri</a>
-              </td>
-              <td>ziggy@example.com</td>
-              <td>555 Yoyo Ave.</td>
-              <td>Austin</td>
-              <td>TX</td>
-              <td>55555</td>
-              <td>
-                <button className="btn">Edit</button>
-                <button className="btn btn-delete">Delete</button>
-              </td>
-            </tr>
+            </>
+       )}
+            
           </tbody>
         </table>
       </main>
@@ -193,7 +177,7 @@ function Auction() {
   </div>
 </>
 
-</>
+
         );
     }
 
