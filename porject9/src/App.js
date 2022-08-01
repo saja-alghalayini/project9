@@ -2,14 +2,15 @@ import { Routes, BrowserRouter, Route, Link } from 'react-router-dom';
 import Userinfo from './users/UserInfo';
 import UpdateInfo from './users/updateUser';
 import About from './static/about';
-import Contact from './static/contact';
+import ContactUs from './static/contact';
 import Adminlogin from './admin/AdminLogin';
 import Dashboard from './admin/Dash';
 import Auction from './admin/Auction';
 import Home from './components/Home';
 import Single from './singlepro';
 import AllPro from './AllPro';
-import LoginAndReg from "./LoginAndReg";
+import Login from "./Login";
+import Signup from "./reg";
 
 function App() {
 
@@ -23,14 +24,14 @@ function App() {
       <Route exact path='/user' element={<Userinfo />} />
       <Route path='/updateInfo' element={<UpdateInfo />} />
       <Route path='/about' element={<About />} />
-      <Route path='/contact' element={<Contact />} />
+      <Route path='/contact' element={<ContactUs />} />
       <Route path="/loginA" element={<Adminlogin />} />
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
       <Route path="/log" element={<Login/>}/>
-        <Route path="/register" element={<Signup/>}/>
+      <Route path="/register" element={<Signup/>}/>
       {/* <Route path="/Home" element={<Home/>}/> */}
-      <Route path="/login" element={<LoginAndReg />}/>
+      
     </Routes>
     </BrowserRouter>
   </>
