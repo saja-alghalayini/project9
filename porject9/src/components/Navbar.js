@@ -89,7 +89,7 @@ function Navbar() {
                                     Home
                                 </a>
                                 <a href="/all" className="nav-item nav-link">
-                                    All auction
+                                    All Product
                                     <UilDiamond/>
                                 </a>
                                 <a href="/about" className="nav-item nav-link">
