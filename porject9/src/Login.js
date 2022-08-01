@@ -11,7 +11,7 @@ function Login() {
     const error=useSelector(state=>state.login.error);
 
         if(admin != ''){
-            window.location.href = "/Dashboard";
+            window.location.href = "/";
         }
     
       
