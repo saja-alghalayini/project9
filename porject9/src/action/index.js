@@ -4,7 +4,7 @@ import axios from 'axios';
 export const login=(email,password)=> async dispatch => {
 
     try{
-        const res = await axios.get('http://localhost/logreg/backend/login.php?email='+email+'&password='+password);
+        const res = await axios.get('http://localhost/project-9/porject9/backend/login.php?email='+email+'&password='+password);
         dispatch( {
             type: GET_ADMIN,
             payload: res.data
