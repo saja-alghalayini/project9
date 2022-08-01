@@ -59,6 +59,7 @@ function Login() {
                                   id="form3Example3c"
                                   className="form-control"
                                   onChange={(e) => setEmail(e.target.value)}
+                                  required
                                 />
                                 <span>{error}</span>
                               </div>
@@ -74,6 +75,7 @@ function Login() {
                                   id="form3Example4c"
                                   className="form-control"
                                   onChange={(e) => setPassword(e.target.value)}
+                                  required
                                 />
                                 
                               </div>

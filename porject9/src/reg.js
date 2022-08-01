@@ -49,6 +49,7 @@ function Signup() {
                                   id="form3Example1c"
                                   className="form-control"
                                   onChange={(e) => dispatch(username(e.target.value))}
+                                  required
                                 />
                                 <span>{error.usernameError}</span>
                               </div>
@@ -64,6 +65,7 @@ function Signup() {
                                   id="form3Example3c"
                                   className="form-control"
                                   onChange={(e) => dispatch(email(e.target.value))}
+                                  required
                                 />
                                 <span>{error.emailError}</span>
                               </div>
@@ -79,6 +81,7 @@ function Signup() {
                                   id="form3Example4c"
                                   className="form-control"
                                   onChange={(e) => dispatch(password(e.target.value))}
+                                  required
                                 />
                                 <span>{error.passError}</span>
                               </div>
@@ -93,6 +96,7 @@ function Signup() {
                                   type="password"
                                   id="form3Example4cd"
                                   className="form-control"
+                                  required
                                   onChange={(e) => dispatch(confirmPass(e.target.value))}
                                 />
                                 <span>{error.confirmPassError}</span>
