@@ -59,9 +59,6 @@ const registerReducer=(state={usernameError:'',emailError:'',passError:'',confir
             break;
         default:
             return state;
-    }
-    
-    
-    
+    }   
 }
 export default registerReducer;

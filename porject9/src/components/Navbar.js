@@ -10,15 +10,17 @@ function Navbar() {
                     <div className="row">
                         <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                             <div className="d-inline-flex align-items-center">
-                                <Link to={'login'}>
+                                <Link to={'register'}>
                                 <a className="text-white pr-3" href="">
                                     Register
                                 </a>
                                 </Link>
                                 <span className="text-white">|</span>
+                                <Link to={'login'}>
                                 <a className="text-white px-3" href="">
                                     Login
                                 </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-md-6 text-center text-lg-right">
