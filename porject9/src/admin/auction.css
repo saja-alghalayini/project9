@@ -44,7 +44,7 @@ table tbody tr:hover {
     margin: 0 5px;
     border: 0;
     color: white;
-    background-color: #00a8e8;
+    /* background-color: #00a8e8; */
 }
 .btn:first-child {
     margin-left: 0;

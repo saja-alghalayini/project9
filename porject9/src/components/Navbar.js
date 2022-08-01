@@ -46,7 +46,7 @@ function Navbar() {
             {/* Topbar End */}
             {/* Navbar Start */}
             <div className="container-fluid position-relative nav-bar p-0">
-                <div className="container position-relative" style={{ zIndex: 9 }}>
+                <div className="container-fluid position-relative" style={{ zIndex: 9 }}>
                     <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
                         <a href="" className="navbar-brand">
                             <img src='/img/auction-logo.png' style={{width:'30%'}}/>
@@ -106,7 +106,7 @@ function Navbar() {
             </div>
             {/* Navbar End */}
             {/* Under Nav Start */}
-            <div className="container-fluid bg-white py-3">
+            {/* <div className="container-fluid bg-white py-3">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 text-left mb-3 mb-lg-0">
@@ -138,7 +138,7 @@ function Navbar() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* Under Nav End */}
         </>
     )
