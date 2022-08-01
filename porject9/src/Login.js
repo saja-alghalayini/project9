@@ -11,6 +11,7 @@ function Login() {
     const error=useSelector(state=>state.login.error);
 
         if(admin != ''){
+          sessionStorage.setItem("user_info", admin);
             window.location.href = "/";
         }
     
@@ -72,6 +73,7 @@ function Login() {
 
       <footer>
         <div className="action">
+        <p className='error'>{error.error}</p>
           <a onClick={() =>  dispatch(login(email,password))}>Login</a>
         </div>
 

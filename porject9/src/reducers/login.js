@@ -22,10 +22,9 @@ export default function(state = initialState, action){
                 }
             }
         case 'logout':
-            return{...state,
-                admin:'',
-                error: '',
-            }
+           
+                sessionStorage.clear();
+           
         default: return state
     }
 
