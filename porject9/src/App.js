@@ -14,10 +14,11 @@ import LoginAndReg from "./LoginAndReg";
 function App() {
 
   return (
-    // <> <Home/>
+    <> 
     <BrowserRouter>
     <Routes>
-    <Route path="/single/:id" element={<Single />}/>
+      <Route path="/" element={<Home/>} />
+      <Route path="/single/:id" element={<Single />}/>
       <Route path="/all" element={<AllPro />}/>
       <Route exact path='/user' element={<Userinfo />} />
       <Route path='/updateInfo' element={<UpdateInfo />} />
@@ -26,11 +27,13 @@ function App() {
       <Route path="/loginA" element={<Adminlogin />} />
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
+      <Route path="/log" element={<Login/>}/>
+        <Route path="/register" element={<Signup/>}/>
+      {/* <Route path="/Home" element={<Home/>}/> */}
       <Route path="/login" element={<LoginAndReg />}/>
-      <Route path="/Home" element={<Home/>}/>
     </Routes>
     </BrowserRouter>
-    // </>
+  </>
 
   );
 }

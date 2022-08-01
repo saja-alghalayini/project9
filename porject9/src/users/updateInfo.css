@@ -20,7 +20,7 @@ input[type="file"]{
 .inp{
     height: 40px;
     border-radius: 3px;
-    border: solid 1px #dccaff;
+    border: solid 1px rgb(123, 105, 2);
     font-size: 20px;
     line-height: 1.42857143;
     background-color: #ffffff;
@@ -43,16 +43,16 @@ a{text-decoration: none;}
     margin-top: 3px;
     margin-bottom: 20px;
     background-color: #efeef2a3;
-    color: rgba(135, 68, 39);
+    color:#dfb163;
     padding: 10px 40px;
     font-size: 23px;
     cursor: pointer;
-    border: 1px solid rgba(135, 68, 39);
+    border: 1px solid #dfb163;
     margin-left: 5%;
 }
 
 .butt:hover{
-    background-color: rgb(135, 68, 39);
+    background-color: #dfb163;
     color: white;
 }
 
@@ -65,9 +65,10 @@ input::placeholder{color: rgb(150, 150, 150); font-size: medium;}
 
 .message{
     position: relative;
-    background-color: rgba(135, 68, 39, 0.758);
+    background-color: #dfb26389;
     z-index: 9999;
     height: 100px;
+    color: #181818;
     
 }
 .message p{
