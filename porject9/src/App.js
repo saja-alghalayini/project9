@@ -7,12 +7,14 @@ import Adminlogin from './admin/AdminLogin';
 import Dashboard from './admin/Dash';
 import Auction from './admin/Auction';
 import Home from './components/Home';
-import LoginAndReg from "./LoginAndReg";
+import Login from './Login';
+import Signup from './reg';
 
 function App() {
 
   return (
-    <> <Home/>
+    <> 
+    {/* <Home/> */}
     <BrowserRouter>
     <Routes>
       <Route exact path='/user' element={<Userinfo />} />
@@ -22,7 +24,8 @@ function App() {
       <Route path="/loginA" element={<Adminlogin />} />
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
-      <Route path="/login" element={<LoginAndReg />}/>
+      <Route path="/log" element={<Login/>}/>
+        <Route path="/register" element={<Signup/>}/>
       {/* <Route path="/Home" element={<Home/>}/> */}
     </Routes>
     </BrowserRouter>
