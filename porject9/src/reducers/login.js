@@ -17,7 +17,7 @@ export default function(state = initialState, action){
             }else{
                 return{
                     ...state,
-                    error:'Username/ email or password is invalid',
+                    error:' email or password is invalid',
                     loading:false,
                 }
             }
