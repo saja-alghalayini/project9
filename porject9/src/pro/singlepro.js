@@ -16,7 +16,7 @@ function Single(){
 console.log(userSold, '11');
   const user_id =1;
   const gitData=()=>{
-    axios.get(`http://localhost/tryproj9/php/singlePro.php?id=`+params.id)
+    axios.get(`http://localhost/project-9/porject9/php/singlePro.php?id=`+params.id)
     .then((res)=>{
     // console.log(res.data,'res.data')
     setInf(res.data);
@@ -26,7 +26,7 @@ console.log(userSold, '11');
 
 
    const getauc=()=>{
-    axios.get(`http://localhost/tryproj9/php/numberAuc.php?pro_id=`+params.id)
+    axios.get(`http://localhost/project-9/porject9/php/numberAuc.php?pro_id=`+params.id)
     .then((res)=>{
     // console.log(res.data,'res.data')
     setAuc(res.data);
@@ -37,7 +37,7 @@ console.log(userSold, '11');
   //  http://localhost/project-9/porject9/php/updateSold.php?id=3
  
    const gitMix=()=>{
-    axios.get(`http://localhost/tryproj9/php/maxPrice.php?pro_id=`+params.id)
+    axios.get(`http://localhost/project-9/porject9/php/maxPrice.php?pro_id=`+params.id)
     .then((res)=>{
     // console.log(res.data,'res.data')
     setMaxPrice(res.data[0]);
@@ -102,12 +102,12 @@ console.log(a, 'roa');
     {
       document.getElementById('bid').style.display='block';
       let id =params.id
-      axios.post('http://localhost/tryproj9/php/updatePrice.php?id='+params.id+'&price='+submit)
+      axios.post('http://localhost/project-9/porject9/php/updatePrice.php?id='+params.id+'&price='+submit)
       .then(() => {
           console.log("success!", submit,params.id);
           
       });
-      axios.post('http://localhost/tryproj9/php/addAuc.php?user_id='+user_id+'&price='+submit+'&pro_id='+id)
+      axios.post('http://localhost/project-9/porject9/php/addAuc.php?user_id='+user_id+'&price='+submit+'&pro_id='+id)
       .then(() => {
           console.log("yess!", submit,params.id);
           
