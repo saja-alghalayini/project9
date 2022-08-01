@@ -87,14 +87,14 @@ if(isset($_POST['name'])){
 }
 
 
-// if(isset($_POST['fetch'])){
-//     echo 'posted';
-// $query='SELECT * FROM pic';
-// $resuslt = mysqli_query($conn,$query);
-// $perfumes= mysqli_fetch_all($resuslt, MYSQLI_ASSOC);
-// echo json_encode($perfumes);
+if(isset($_POST['fetch'])){
+    echo 'posted';
+$query='SELECT * FROM project9';
+$resuslt = mysqli_query($conn,$query);
+$perfumes= mysqli_fetch_all($resuslt, MYSQLI_ASSOC);
+echo json_encode($perfumes);
 
-// }
+}
 
 
 

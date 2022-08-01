@@ -3,6 +3,10 @@ import { Routes, BrowserRouter, Route, Link } from 'react-router-dom';
 import {useSelector,useDispatch } from 'react-redux';
 import {logout} from "../action/index";
 
+import { UilBookMedical } from '@iconscout/react-unicons'
+import { UilDiamond } from '@iconscout/react-unicons'
+import { UilPadlock } from '@iconscout/react-unicons'
+import { UilPhone } from '@iconscout/react-unicons'
 
 function Navbar() {
 
@@ -62,7 +66,7 @@ function Navbar() {
             <div className="container-fluid position-relative nav-bar p-0">
                 <div className="container-fluid position-relative" style={{ zIndex: 9 }}>
                     <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                        <a href="" className="navbar-brand">
+                        <a href="/" className="navbar-brand">
                             <img src='/img/auction-logo.png' style={{width:'30%'}}/>
                             {/* <h1 className="m-0 display-5 text-white">
                                 <span className="text-primary">i</span>DESIGN
@@ -84,34 +88,26 @@ function Navbar() {
                                 <a href="/" className="nav-item nav-link active">
                                     Home
                                 </a>
+                                <a href="/all" className="nav-item nav-link">
+                                    All auction
+                                    <UilDiamond/>
+                                </a>
                                 <a href="/about" className="nav-item nav-link">
                                     About
                                 </a>
-                                <a href="/service" className="nav-item nav-link">
-                                    Service
-                                </a>
-                                <a href="/project" className="nav-item nav-link">
-                                    Project
-                                </a>
-                                <div className="nav-item dropdown">
-                                    <a
-                                        href="#"
-                                        className="nav-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                    >
-                                        Pages
-                                    </a>
-                                    <div className="dropdown-menu rounded-0 m-0">
-                                        <a href="blog.html" className="dropdown-item">
-                                            Blog Grid
-                                        </a>
-                                        <a href="single.html" className="dropdown-item">
-                                            Blog Detail
-                                        </a>
-                                    </div>
-                                </div>
+            
+
                                 <a href="/contact" className="nav-item nav-link">
                                     Contact
+                                    <UilPhone/>
+                                </a>
+                                <a href="/Uploader" className="nav-item nav-link ">
+                                    Add auction
+                                <UilBookMedical/>
+                                </a>
+                                <a href="#" className="nav-item nav-link disabled  btn" >
+                                    Shop
+                                <UilPadlock/>
                                 </a>
                             </div>
                         </div>

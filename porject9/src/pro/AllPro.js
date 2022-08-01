@@ -3,6 +3,9 @@ import axios from 'axios';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
+
+
 function AllPro() {
   const [APIData, setAPIData] = useState([]);
   const [id, setId] = useState('');
@@ -24,21 +27,22 @@ function AllPro() {
 
     <>
     <div className="container-fluid">
-      <div className="row">
+      <div className="row" >
         <Navbar/>
       </div>
       <div className="row">
-      <div className="container mx-auto mt-4">
+      <div className="container mx-auto mt-4" >
         <div className="row">
           {APIData.map(u =>
-            <div className="col-md-4">
+
+            <div className="col-md-4 mt-5" style={{borderRadius:'20% '}}>
               <div className="card" >
-                <img src={"img/" + u.img} className="card-img-top" alt="..." />
+                <img src={"img/" + u.img} className="card-img-top" style={{height:'250px'}} alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{u.name}</h5>
                   <h6 className="card-subtitle mb-2 text-muted">{u.min_price}</h6>
                   <p className="card-text">{u.description}</p>
-                  <a href={'/single/' + u.id} className="btn mr-2"><i className="fas fa-link"></i> Join Auction</a>
+                  <a href={'/single/' + u.id} className="btn btn-primary mr-2"><i className="fas fa-link"></i> Join Auction</a>
 
                 </div>
               </div>
@@ -47,8 +51,8 @@ function AllPro() {
         </div>
       </div>
       </div>
-      <div className="row">
-        <Footer/>
+      <div className="row mt-5">
+        <Footer />
       </div>
       </div>
     </>
