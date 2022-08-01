@@ -9,7 +9,9 @@ import Auction from './admin/Auction';
 import Home from './components/Home';
 import Single from './pro/singlepro';
 import AllPro from './pro/AllPro';
-import LoginAndReg from "./LoginAndReg";
+// import LoginAndReg from "./LoginAndReg";
+import Login from './Login';
+import Signup from './reg';
 
 function App() {
 
@@ -27,10 +29,9 @@ function App() {
       <Route path="/loginA" element={<Adminlogin />} />
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
-      <Route path="/log" element={<Login/>}/>
-        <Route path="/register" element={<Signup/>}/>
-      {/* <Route path="/Home" element={<Home/>}/> */}
-      <Route path="/login" element={<LoginAndReg />}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Signup/>}/>
+      {/* <Route path="/login" element={<LoginAndReg />}/> */}
     </Routes>
     </BrowserRouter>
   </>
