@@ -18,9 +18,10 @@ function App() {
 
   return (
     <> 
-   
+
     <BrowserRouter>
     <Routes>
+      
       <Route path="/" element={<Home/>} />
       <Route path="/single/:id" element={<Single />}/>
       <Route path="/all" element={<AllPro />}/>
@@ -37,7 +38,7 @@ function App() {
       {/* <Route path="/login" element={<LoginAndReg />}/> */}
     </Routes>
     </BrowserRouter>
-    {/* <Uploader/> */}
+    
   </>
 
   );

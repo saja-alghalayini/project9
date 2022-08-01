@@ -18,7 +18,7 @@ else
 }
 
 
-$sql = "select * from products WHERE is_sold=0 AND is_acc=1";
+$sql = "select * from products WHERE is_sold=0 AND is_acc=1 LIMIT 3";
 $arr =  array();
 
 $result  = $conn->query($sql);

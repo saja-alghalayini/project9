@@ -1,11 +1,17 @@
 import React from 'react';
 import { Routes, BrowserRouter, Route, Link } from 'react-router-dom';
+import {useSelector,useDispatch } from 'react-redux';
+import {logout} from "../action/index";
+
 import { UilBookMedical } from '@iconscout/react-unicons'
 import { UilDiamond } from '@iconscout/react-unicons'
 import { UilPadlock } from '@iconscout/react-unicons'
 import { UilPhone } from '@iconscout/react-unicons'
 
 function Navbar() {
+
+    const dispatch=useDispatch();
+  let user_id= sessionStorage.getItem("user_info");
     return (
         <>
             {/* Topbar Start */}
@@ -13,14 +19,24 @@ function Navbar() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                            <div className="d-inline-flex align-items-center">                   
-                                <a className="text-white pr-3" href="/register">
-                                    Register
-                                </a>                              
-                                <span className="text-white">|</span>                          
-                                <a className="text-white px-3" href="/login">
-                                    Login
-                                </a>                          
+                            <div className="d-inline-flex align-items-center">
+                           
+                {!user_id &&
+                <a href="/login" className="btn-login">
+                  <span className="text-white px-3" id="loginBtn"/> Login
+                </a>}
+                <span className="text-white">|</span>
+                {!user_id &&
+                <a href="/register" className="btn-startgames">
+                  <span className="text-white pr-3" id="joinUstBtn"/> Register
+                </a>}
+                {user_id &&
+                <a href="/" onClick={()=>dispatch(logout())}>
+                  <span className="text-white pr-3" id="logoutBtn"/> Logout
+                </a>}
+                               
+                                
+                               
                             </div>
                         </div>
                         <div className="col-md-6 text-center text-lg-right">
