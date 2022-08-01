@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />
-    <Route path="/single/:id" element={<Single />}/>
+      <Route path="/single/:id" element={<Single />}/>
       <Route path="/all" element={<AllPro />}/>
       <Route exact path='/user' element={<Userinfo />} />
       <Route path='/updateInfo' element={<UpdateInfo />} />

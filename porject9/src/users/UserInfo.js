@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import "./userInfo.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 
 function Userinfo(props) {
@@ -21,7 +23,11 @@ function Userinfo(props) {
 
   return (
     <>
-
+    <div className="container-fluid">
+      <div className="row">
+        <Navbar/>
+      </div>
+      <div className="row">
       {user.map((info) =>
           <div className="centeruser mb-5" style={{ marginTop: '1%', marginBottom: '60%' }}>
             <div className="containerUser mb-5">
@@ -52,10 +58,12 @@ function Userinfo(props) {
               </div>
             </div>
           </div>
-
-
-
       )}
+      </div>
+      <div className="row mt-2">
+        <Footer/>
+      </div>
+      </div>
     </>
   );
 }
