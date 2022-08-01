@@ -12,6 +12,7 @@ const passRegExp= RegExp(
 )
 
 
+
 const registerReducer=(state={usernameError:'',emailError:'',passError:'',confirmPassError:'',username:''},action)=>{
 
     switch(action.type){
@@ -25,42 +26,36 @@ const registerReducer=(state={usernameError:'',emailError:'',passError:'',confir
                 return{...state,
                     usernameError: 'Username is invalid'}
             }
-
-            
         case "email":
             if(action.email !=='' && emailRegExp.test(action.email)){
                 return {...state,email:action.email, emailError: null}
             }else{
                 return{...state,emailError: 'Email is invalid'}
             }
-
-
         case "password":
             if(action.password !=='' && passRegExp.test(action.password)){
                 return {...state,password:action.password, passError: null}
             }else{
                 return{...state,passError: 'Password is invalid'}
             }
-
-
         case "confirmPass":
             if(action.confirmPass === state.password && action.password !== ''){
                 return {...state, confirmPassError: null};
             }else{
                 return{...state,confirmPassError: 'The two passwords do not match'}
             }
-
         case "SIGNUP":
             if(state.usernameError == null && state.emailError == null && state.passError == null && state.confirmPassError == null) {
 
-                axios.post('http://localhost/project9/porject9/backend/register.php?username='+state.username+'&email='+state.email+'&password='+state.password)
-                window.location.href = "/";
- 
+                axios.post('http://localhost/logreg/backend/reg.php?username='+state.username+'&email='+state.email+'&password='+state.password)
+                .then(()=>{
+                    console.log('dyar');
+                    window.location="/";
+                })
+               
             }else{
                 return console.log('error');
             }
-
-
             break;
         default:
             return state;
