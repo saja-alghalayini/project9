@@ -21,7 +21,7 @@ function Login() {
   const [password, setPassword] = useState('');
 
 
-  document.body.style.overflow = 'hidden';
+  // document.body.style.overflow = 'block';
   return (
     <>
       <div className='container-fluid'>
@@ -61,7 +61,7 @@ function Login() {
                                   onChange={(e) => setEmail(e.target.value)}
                                   required
                                 />
-                                <span>{error}</span>
+                                {/* <span>{error}</span> */}
                               </div>
                             </div>
                             <div className="d-flex flex-row align-items-center mb-4">

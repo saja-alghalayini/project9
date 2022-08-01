@@ -46,7 +46,7 @@ function Navbar() {
             <div className="container-fluid position-relative nav-bar p-0">
                 <div className="container-fluid position-relative" style={{ zIndex: 9 }}>
                     <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                        <a href="" className="navbar-brand">
+                        <a href="/" className="navbar-brand">
                             <img src='/img/auction-logo.png' style={{width:'30%'}}/>
                             {/* <h1 className="m-0 display-5 text-white">
                                 <span className="text-primary">i</span>DESIGN
