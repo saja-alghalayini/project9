@@ -13,6 +13,7 @@ function Login() {
   const error = useSelector(state => state.login.error);
 
   if (admin !== '') {
+    sessionStorage.setItem("user_info", admin);
     window.location.href = "/";
   }
 
@@ -110,7 +111,6 @@ function Login() {
             </div>
             <div className="user-info">
               <img src="https://cdn.discordapp.com/attachments/1002099207177523221/1003297806192226394/logoo-removebg-preview_3.png" className="safari-logo-login" />
-
               <h3>Safari</h3>
               <h5>Admin Dashboard Login</h5>
             </div>

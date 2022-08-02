@@ -1,15 +1,15 @@
 <?php
 require "connection.php";
 
-$username  = $_REQUEST['username'];
+$firstname  = $_REQUEST['firstname'];
 $email     = $_REQUEST['email'];
 $password  = md5($_REQUEST['password']);
-$confirmPass	  = md5($_REQUEST['confirmPass']);
+$con_passwoed	  = md5($_REQUEST['con_passwoed']);
 
 
-$sql = "INSERT INTO users (username, email, password, confirmPass) VALUES (?,?,?,?)";
+$sql = "INSERT INTO users (firstname, email, password, con_passwoed) VALUES (?,?,?,?)";
 $result  = $conn->prepare($sql);
 
-$result->execute([$username, $email, $password, $confirmPass]);
+$result->execute([$firstname, $email, $password, $con_passwoed]);
 
 ?>

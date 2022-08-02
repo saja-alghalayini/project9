@@ -2,7 +2,23 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import '../style/Home.css';
+import  { Component, useState, useEffect } from "react";
+import axios from 'axios';
+
+
 function Home() {
+
+
+ const [APIData, setAPIData] = useState([]);
+  useEffect(() => {
+    
+    
+    axios.get(`http://localhost/project-9/porject9/php/readProlimit.php`)
+    .then((response) => {
+        setAPIData(response.data);
+        console.log(response.data,"res.data")
+    })
+}, [])
   return (
     <>
       <div className='container-fluid'>
@@ -65,96 +81,29 @@ function Home() {
                 </div>
               </div>
               <div className="row pb-3">
+              {APIData.map(u =>
                 <div className="col-md-4 mb-4">
                   <div className="card border-0 mb-2">
-                    <img className="card-img-top" src="https://images.pexels.com/photos/159613/ghettoblaster-radio-recorder-boombox-old-school-159613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <img className="card-img-top" src={"img/" + u.img} alt="" height={300} />
                     <div className="card-body bg-white p-4">
                       <div className="d-flex align-items-center mb-3">
-                        <a className="bg-gold btn btn-primary" href="">
-                          <i className="fa fa-link" />
+                        <a className="bg-gold btn btn-primary" >
+                        <i class="fa-solid fa-gavel"></i>
                         </a>
                         <h5 className="m-0 ml-3 text-truncate">
-                          Diam amet eos at no eos
+                        {u.name}
                         </h5>
                       </div>
                       <p>
-                        Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea
-                        est diam eos, sit vero stet justo
+                      {u.description}
                       </p>
                       <div className="d-flex">
-                        <small className="mr-3">
-                          <i className="fa fa-user text-primary" /> Admin
-                        </small>
-                        <small className="mr-3">
-                          <i className="fa fa-folder text-primary" /> Web Design
-                        </small>
-                        <small className="mr-3">
-                          <i className="fa fa-comments text-primary" /> 15
-                        </small>
+                      <a href={'/single/' + u.id} className="btn mr-2"><i className="fas fa-link"></i> Join Auction</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4 mb-4">
-                  <div className="card border-0 mb-2">
-                    <img className="card-img-top" src="https://images.pexels.com/photos/595699/pexels-photo-595699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                    <div className="card-body bg-white p-4">
-                      <div className="d-flex align-items-center mb-3">
-                        <a className=" bg-goldbtn btn-primary" href="">
-                          <i className="fa fa-link" />
-                        </a>
-                        <h5 className="m-0 ml-3 text-truncate">
-                          Diam amet eos at no eos
-                        </h5>
-                      </div>
-                      <p>
-                        Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea
-                        est diam eos, sit vero stet justo
-                      </p>
-                      <div className="d-flex">
-                        <small className="mr-3">
-                          <i className="fa fa-user text-primary" /> Admin
-                        </small>
-                        <small className="mr-3">
-                          <i className="fa fa-folder text-primary" /> Web Design
-                        </small>
-                        <small className="mr-3">
-                          <i className="fa fa-comments text-primary" /> 15
-                        </small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <div className="card border-0 mb-2">
-                    <img className="card-img-top" src="https://images.pexels.com/photos/1762446/pexels-photo-1762446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                    <div className="card-body bg-white p-4">
-                      <div className="d-flex align-items-center mb-3">
-                        <a className=" bg-goldbtn btn-primary" href="">
-                          <i className="fa fa-link" />
-                        </a>
-                        <h5 className="m-0 ml-3 text-truncate">
-                          Diam amet eos at no eos
-                        </h5>
-                      </div>
-                      <p>
-                        Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea
-                        est diam eos, sit vero stet justo
-                      </p>
-                      <div className="d-flex">
-                        <small className="mr-3">
-                          <i className="fa fa-user text-primary" /> Admin
-                        </small>
-                        <small className="mr-3">
-                          <i className="fa fa-folder text-primary" /> Web Design
-                        </small>
-                        <small className="mr-3">
-                          <i className="fa fa-comments text-primary" /> 15
-                        </small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+)}
               </div>
             </div>
           </div>
