@@ -210,6 +210,7 @@ console.log(a, 'roa');
                  
                 </div>
                 <p>{auc} <code> [bids]</code></p>
+                <p> this auction will end in {inf.end_date} </p>
               </div>
               <p className="about">
                 {inf.description}
