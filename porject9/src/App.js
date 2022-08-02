@@ -12,11 +12,13 @@ import AllPro from './pro/AllPro';
 // import LoginAndReg from "./LoginAndReg";
 import Login from './Login';
 import Signup from './reg';
+import Uploader from '../src/components/Uploader/Uploader'
 
 function App() {
 
   return (
     <> 
+   
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -34,6 +36,7 @@ function App() {
       {/* <Route path="/login" element={<LoginAndReg />}/> */}
     </Routes>
     </BrowserRouter>
+    <Uploader/>
   </>
 
   );
