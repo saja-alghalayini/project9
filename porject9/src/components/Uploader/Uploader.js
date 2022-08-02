@@ -36,8 +36,6 @@ function Uploader() {
         if (price === '') {
             setresponse('Please select a starting price ')
         }
-
-
         if (desc === '') {
             setresponse('Description cannot be empty');
         }
