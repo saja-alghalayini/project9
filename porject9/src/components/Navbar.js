@@ -1,5 +1,9 @@
 import React from 'react';
 import { Routes, BrowserRouter, Route, Link } from 'react-router-dom';
+import { UilBookMedical } from '@iconscout/react-unicons'
+import { UilDiamond } from '@iconscout/react-unicons'
+import { UilPadlock } from '@iconscout/react-unicons'
+import { UilPhone } from '@iconscout/react-unicons'
 
 function Navbar() {
     return (
@@ -70,34 +74,26 @@ function Navbar() {
                                 <a href="/" className="nav-item nav-link active">
                                     Home
                                 </a>
+                                <a href="/all" className="nav-item nav-link">
+                                    All auction
+                                    <UilDiamond/>
+                                </a>
                                 <a href="/about" className="nav-item nav-link">
                                     About
                                 </a>
-                                <a href="/service" className="nav-item nav-link">
-                                    Service
-                                </a>
-                                <a href="/project" className="nav-item nav-link">
-                                    Project
-                                </a>
-                                <div className="nav-item dropdown">
-                                    <a
-                                        href="#"
-                                        className="nav-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                    >
-                                        Pages
-                                    </a>
-                                    <div className="dropdown-menu rounded-0 m-0">
-                                        <a href="blog.html" className="dropdown-item">
-                                            Blog Grid
-                                        </a>
-                                        <a href="single.html" className="dropdown-item">
-                                            Blog Detail
-                                        </a>
-                                    </div>
-                                </div>
+            
+
                                 <a href="/contact" className="nav-item nav-link">
                                     Contact
+                                    <UilPhone/>
+                                </a>
+                                <a href="/Uploader" className="nav-item nav-link ">
+                                    Add auction
+                                <UilBookMedical/>
+                                </a>
+                                <a href="#" className="nav-item nav-link disabled  btn" >
+                                    Shop
+                                <UilPadlock/>
                                 </a>
                             </div>
                         </div>

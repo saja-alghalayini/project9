@@ -3,7 +3,8 @@ import '../../App.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './Uploader.css'
 // import './ff.js/index.js'
-
+import Navbar from "../../components/Navbar";       
+import Footer from "../../components/Footer";
 
 
 
@@ -76,6 +77,8 @@ function Uploader() {
     }
   return (
     <>
+
+    <Navbar/>
 <div>
         
         <div className="container">
@@ -87,21 +90,21 @@ function Uploader() {
 
 
 <label htmlFor="name">Name of your product</label>
-<input type="text" name="" id="name"  onChange={(e)=>setname(e.target.value)} />
+<input type="text" name="" id="name" className='form-control'  onChange={(e)=>setname(e.target.value)} />
 
  <label htmlFor="des" >Description</label>
 
-<textarea name="" id="des" cols="30"   rows="10" onChange={(e)=>setdesc(e.target.value)}></textarea>
+<textarea name="" id="des" cols="30" className='form-control'    rows="10" onChange={(e)=>setdesc(e.target.value)}></textarea>
 
 <label htmlFor="Cost">price of product</label>
-<input type="number" name="Cost" id="" onChange={(e)=>setprice(e.target.value)} /> 
+<input type="number" name="Cost" id="" className='form-control'   onChange={(e)=>setprice(e.target.value)} /> 
 
 
 
 
 <label htmlFor="img">image of product</label>
-<input type="file" name="" id="img" className='form-control'  ref={selectedFile}/>
-<button onClick={uploader}type='button' className="btn btn-warning">Upload</button>
+<input type="file" name="" id="img" className='form-control'    ref={selectedFile}/>
+<button onClick={uploader}type='button' className="btn btn-primary form-control">Upload</button>
 
 
 </form>
@@ -149,7 +152,7 @@ function Uploader() {
     })}; 
     </div> */}
 
-
+<Footer/>
 
     </>
   );

@@ -12,7 +12,7 @@ import AllPro from './pro/AllPro';
 // import LoginAndReg from "./LoginAndReg";
 import Login from './Login';
 import Signup from './reg';
-import Uploader from '../src/components/Uploader/Uploader'
+import Uploader from './components/Uploader/Uploader';
 
 function App() {
 
@@ -33,10 +33,11 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} /> 
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Signup/>}/>
+      <Route path="/Uploader" element={<Uploader/>}/>
       {/* <Route path="/login" element={<LoginAndReg />}/> */}
     </Routes>
     </BrowserRouter>
-    <Uploader/>
+    {/* <Uploader/> */}
   </>
 
   );
