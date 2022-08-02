@@ -129,7 +129,7 @@ console.log(a, 'roa');
   }
     gitMix();
     gitData();
-   },[submit,inf.min_price]);
+   },[submit,inf.min_price,newPrice]);
 
 
    
@@ -138,8 +138,9 @@ console.log(a, 'roa');
   const handelPrice=(event)=>
   {
     event.preventDefault();
-    setSubmit(newPrice);
     document.getElementById('er').style.display="none";
+    setSubmit(newPrice);
+    
     if(parseInt(inf.min_price) < parseInt(submit))
     {
       document.getElementById('er').style.display="none";
