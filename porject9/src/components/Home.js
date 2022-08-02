@@ -48,17 +48,17 @@ function Home() {
                     <div className="p-3" style={{ maxWidth: '800px' }}>
                       <h4 className="text-primary text-uppercase font-weight-normal mb-md-3">Do you have a Traditional Antique!</h4>
                       <h3 className="display-3 text-white mb-md-4">Would you like to put your product up for Auction?</h3>
-                      <a href className="bg-gold btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Join Us</a>
+                      <a  className="bg-gold btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Join Us</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <a className="carousel-control-prev" href="#header-carousel" data-slide="prev">
+              <a className="carousel-control-prev" href="/header-carousel" data-slide="prev">
                 <div className="btn btn-primary" style={{ width: '45px', height: '45px' }}>
                   <span className="carousel-control-prev-icon mb-n2" />
                 </div>
               </a>
-              <a className="carousel-control-next" href="#header-carousel" data-slide="next">
+              <a className="carousel-control-next" href="/header-carousel" data-slide="next">
                 <div className="btn btn-primary" style={{ width: '45px', height: '45px' }}>
                   <span className="carousel-control-next-icon mb-n2" />
                 </div>

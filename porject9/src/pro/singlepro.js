@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function Single(){
   const params = useParams(); 
- 
+  
 
  
   const [inf,setInf]=useState('[]');
@@ -13,12 +13,13 @@ function Single(){
   const [auc, setAuc]=useState('');
   const [maxPrice, setMaxPrice]=useState('');
   const [userSold, setUserSold]=useState('');
-console.log(userSold, '11');
-  const user_id =1;
+  // const [timer, setTimer]=useState(true);
+
+let user_id = sessionStorage.getItem("user_info");
   const gitData=()=>{
     axios.get(`http://localhost/project-9/porject9/php/singlePro.php?id=`+params.id)
     .then((res)=>{
-    // console.log(res.data,'res.data')
+  
     setInf(res.data);
     })
     console.log(auc);
@@ -28,45 +29,35 @@ console.log(userSold, '11');
    const getauc=()=>{
     axios.get(`http://localhost/project-9/porject9/php/numberAuc.php?pro_id=`+params.id)
     .then((res)=>{
-    // console.log(res.data,'res.data')
+  
     setAuc(res.data);
     })
    }
  
 
-  //  http://localhost/project-9/porject9/php/updateSold.php?id=3
+
  
    const gitMix=()=>{
     axios.get(`http://localhost/project-9/porject9/php/maxPrice.php?pro_id=`+params.id)
     .then((res)=>{
-    // console.log(res.data,'res.data')
+
     setMaxPrice(res.data[0]);
-    // console.log(maxPrice, 'roa');
+   
     })
    }
  
  
     
-  // http://localhost/project-9/porject9/php/readSold.php?id=3
-
-
-  // const getUserSold=()=>{
-  //   axios.get(`http://localhost/tryproj9/php/maxPrice.php?pro_id=`+params.id)
-  //   .then((res)=>{
-  //   // console.log(res.data,'res.data')
-  //   userSold(res.data[0]);
-  //   // console.log(maxPrice, 'roa');
-  //   })
-  //  }
+ 
 
 
   const date1 =  new Date();
    const date11  =  date1.getTime();
-  //  console.log(date11, '1');
+
   const date2 =  new Date(inf.end_date);
   const date22  =  date2.getTime();
 
-  // const date2 = new Date(inf.end_date);
+
   const Difference_In_Time = (date22 - date11);
  console.log(Difference_In_Time , 'gg');
   const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
@@ -83,99 +74,89 @@ console.log(a, 'roa');
    var diff = d2.getTime() - d1.getTime();   
        
    var daydiff = diff / (1000 * 60 * 60 * 24); 
-   console.log(daydiff, 'ibrahim '); 
-// console.log((inf.start_date), 'roa2');
+   console.log(daydiff, 'roaa'); 
+
   useEffect(()=>{
-
-
+    // setTimer(true);
+    document.getElementById('win').style.display="none";
     if(daydiff>0){
-    getauc();
-
-    gitMix();
-    if (maxPrice.user_id == user_id){
-      document.getElementById('win').style.display="block";
-   
-    }
-    document.getElementById('end').style.display='none';
-    document.getElementById('bid').style.display='block';
-    if(parseInt(inf.min_price) < parseInt(submit))
-    {
+      // setTimer(true);
+      getauc();
+      gitMix();
+      if (maxPrice.user_id == user_id){
+        document.getElementById('heigh').style.display="block";
+      }
+      document.getElementById('end').style.display='none';
       document.getElementById('bid').style.display='block';
-      let id =params.id
-      axios.post('http://localhost/project-9/porject9/php/updatePrice.php?id='+params.id+'&price='+submit)
-      .then(() => {
-          console.log("success!", submit,params.id);
-          
-      });
-      axios.post('http://localhost/project-9/porject9/php/addAuc.php?user_id='+user_id+'&price='+submit+'&pro_id='+id)
-      .then(() => {
-          console.log("yess!", submit,params.id);
-          
-      });
-        console.log(inf.min_price);
-        console.log('yes' );
-     
-        
+      if(parseInt(inf.min_price) < parseInt(submit))
+      {
+        document.getElementById('bid').style.display='block';
+        let id =params.id
+        axios.post('http://localhost/project-9/porject9/php/updatePrice.php?id='+params.id+'&price='+submit)
+        .then(() => {
+            console.log("success!", submit,params.id);
+            
+        });
+        axios.post('http://localhost/project-9/porject9/php/addAuc.php?user_id='+user_id+'&price='+submit+'&pro_id='+id)
+        .then(() => {
+            console.log("yess!", submit,params.id); 
+        });
+          console.log(inf.min_price);
+          console.log('yes' );  
+      }
+  }
+  else if (daydiff<=0)
+  {
+    if (maxPrice.user_id == user_id)
+    {
+      document.getElementById('win').style.display="block";
     }
-  
-    
-    
-    
-
-  }else{
- 
     document.getElementById('bid').style.display='none';
     document.getElementById('end').style.display='block';
 
-    // http://localhost/project-9/porject9/php/insertSoldPro.php?user_id=100&price=1&pro_id=3
     axios.post('http://localhost/project-9/porject9/php/updateSold.php?id='+params.id)
     .then(() => {
-        console.log("sold!", submit,params.id);
-        
+        console.log("sold!", submit,params.id); 
     });
-
-    axios.post('http://localhost/project-9/porject9/php/insertSoldPro.php?user_id='+user_id+'&price='+inf.min_price+'&pro_id='+params.id)
-    .then(() => {
-        console.log("add!", submit,params.id);
-        
-    });
-    // getUserSold();
-    
-    if (maxPrice.user_id == user_id ){
-      document.getElementById('user').style.display="block";
-   
-    }
-
+    // axios.post('http://localhost/project-9/porject9/php/insertSoldPro.php?user_id='+user_id+'&price='+inf.min_price+'&pro_id='+params.id)
+    // .then(() => {
+    //     console.log("add!", submit,params.id); 
+    // });
+    // setTimer(false);
   }
-
-  gitMix();
-
-    gitData()
-    
-   },[submit,inf.min_price])  ;
+    gitMix();
+    gitData();
+   },[submit,inf.min_price]);
 
 
    
 
 
-  const handelPrice=(event)=>{
+  const handelPrice=(event)=>
+  {
     event.preventDefault();
     setSubmit(newPrice);
     document.getElementById('er').style.display="none";
     if(parseInt(inf.min_price) < parseInt(submit))
     {
       document.getElementById('er').style.display="none";
-    } else{
+    } 
+    else
+    {
       document.getElementById('er').style.display="block";
     }
-    
- 
-   
-}
+  }
     return(
+      <>
+      
+
+
+
+
+
         <div className="container mt-5 mb-5">
   <div className="row d-flex justify-content-center">
-  <div class="alert alert-success" role="alert" id='win' style={{display:'none'}}>
+  <div class="alert alert-success" role="alert" id='heigh' style={{display:'none'}}>
   You're the highest bidder!
 </div>
     <div className="col-md-10">
@@ -221,13 +202,14 @@ console.log(a, 'roa');
               <div className="cart mt-4 align-items-center" id ='bid'>
               
                 <input className="btn  mr-2 px-4" placeholder='Bit Now' type={'number'} onChange={(e) => setNewP(e.target.value)}/>
-                <button type="" className="btn btn-block " style={{backgroundColor: '#FDBE33'}} onClick={handelPrice}>Bid Now</button><br></br>
+                {user_id ? <button type="" className="btn btn-block " style={{backgroundColor: '#FDBE33',}} onClick={handelPrice}>Bid Now</button>: <><button type="" className="btn btn-block " style={{backgroundColor: '#FDBE33',}} disabled>Bid Now</button> <span style={{color: 'red'}}>Login to Bid</span></>}
+                <br></br>
                 <small style={{color:'red', display:'none'}} id='er'>Your bid should be more than the price</small>
                  
               
               
               </div>
-              <div class="alert alert-success" role="alert" id='user' style={{display:'none'}}>
+              <div class="alert alert-success" role="alert" id='win' style={{display:'none'}}>
               Congratulations!! you won this auction
 Go to your profile page to complete the purchase
 </div>
@@ -238,7 +220,7 @@ Go to your profile page to complete the purchase
     </div>
   </div>
 </div>
-
+</>
     )
 }
 
