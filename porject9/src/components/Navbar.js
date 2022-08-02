@@ -106,7 +106,7 @@ function Navbar() {
                                     {/* <UilPhone /> */}
                                 </a>
                                 <a href="/Uploader" className="nav-item nav-link ">
-                                    Add auction
+                                    Add Product
                                     {/* <UilBookMedical /> */}
                                 </a>
                                 {/* <a href="#" className="nav-item nav-link disabled  btn" >
