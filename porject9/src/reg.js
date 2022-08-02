@@ -19,22 +19,43 @@ function Signup() {
         <div className='row'>
           <Navbar />
         </div>
-        <div className='row '>
+        <div className="row">
+          {/* Page Header Start */}
+          <div className="container-fluid bg-secondary py-5">
+            <div className="container py-5">
+              <div className="row align-items-center py-4">
+                <div className="col-md-6 text-center text-md-left">
+                  <h1 className="mb-4 mb-md-0 text-primary text-uppercase">Register</h1>
+                </div>
+
+                <div className="col-md-6 text-center text-md-right">
+                  <div className="d-inline-flex align-items-center">
+                    <a className="btn btn-outline-primary" href>Home</a>
+                    <i className="fas fa-angle-double-right text-primary mx-2" />
+                    <a className="btn btn-outline-primary disabled" href>Register</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Header end */}
+        <div className='row'>
           <section className="vh-100 w-100" style={{ backgroundColor: "#F3F6FF"}}>
             <div className="container h-100">
-              <div className="row d-flex justify-content-center align-items-center h-100"style={{ backgroundColor: "#dfb163"}} >
-                <div className="col-lg-12 col-xl-11" >
+              <div className="row d-flex justify-content-center align-items-center h-100" >
+                <div className="col-lg-12 col-xl-11" style={{ backgroundColor: "#dfb163"}} >
                   <div className="card text-black" style={{ borderRadius: 25 }}>
                     <div className="card-body p-md-5">
                       <div className="row justify-content-center">
-                        <div className="col-md-5 col-lg-6 col-xl-7 d-flex align-items-center order-0 order-lg-2 float-left">
+                        <div className="col-md-9 col-lg-6 col-xl-7 d-flex align-items-center justify-content-end order-0 order-lg-2 float-left">
                           <img
                             src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                             className="img h-75 w-75 mr-2"
                             alt="Sample image"
                           />
                         </div>
-                        <div className="col-md-7 col-lg-6 col-xl-5 order-2 order-lg-1">
+                        <div className="col-md-3 col-lg-6 col-xl-5 order-2 order-lg-1">
                           <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style={{ color: '#252531' }}>
                             Register
                           </p>
