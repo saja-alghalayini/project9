@@ -82,9 +82,9 @@ const ContactUs = () => {
                       </div>
                     </div>
 
-                    <div className="d-inline-flex border border-secondary p-4 mb-4">
-                      <h1 className="flaticon-email font-weight-normal text-secondary m-0 mr-3" />
-                      <div className="d-flex flex-column">
+                  <div className="d-inline-flex border border-secondary p-4 mb-4">
+                    <h1 className="flaticon-email font-weight-normal text-secondary m-0 mr-3" ></h1>
+                    <div className="d-flex flex-column">
 
                         <h4>Email Us</h4>
 
