@@ -15,6 +15,6 @@ require "connection.php";
         die("Could not connect to the database $dbname :" . $e->getMessage());
     }
      while ($row = $q->fetch()): 
-            echo htmlspecialchars($row['email']);
+            echo htmlspecialchars($row['user_id']);
      endwhile; 
      ?>

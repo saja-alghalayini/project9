@@ -3,9 +3,6 @@ import axios from 'axios';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
-
-
 function AllPro() {
   const [APIData, setAPIData] = useState([]);
   const [id, setId] = useState('');

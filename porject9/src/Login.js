@@ -13,7 +13,7 @@ function Login() {
   const error = useSelector(state => state.login.error);
 
   if (admin !== '') {
-    sessionStorage.setItem("user_info", user);
+    sessionStorage.setItem("user_info", admin);
     window.location.href = "/";
   }
 
