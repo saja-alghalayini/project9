@@ -9,7 +9,7 @@ import {Link } from 'react-router-dom';
 function Auction(props) {
   const [aution, setAution] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost/redux-project9/API/adminauction.php`)
+    axios.get(`http://localhost/project-9/api/API/adminauction.php.php`)
       // console.log(aa)
       .then((res) => {
         //  console.log(res)

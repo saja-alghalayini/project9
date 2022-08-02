@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import '../style/Home.css';
-import  { Component, useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from 'axios';
 
 
@@ -10,6 +10,7 @@ function Home() {
 
 
  const [APIData, setAPIData] = useState([]);
+ 
   useEffect(() => {
     
     
@@ -25,7 +26,7 @@ function Home() {
         <div className='row'>
           <Navbar />
         </div>
-        <div className='row mt-3'>
+        <div className='row '>
 
           {/* Carousel Start */}
           <div className="container-fluid p-0">
@@ -37,7 +38,7 @@ function Home() {
                     <div className="p-3" style={{ maxWidth: '800px' }}>
                       <h4 className="text-primary text-uppercase font-weight-normal mb-md-3">Do you have a Traditional Antique!</h4>
                       <h3 className="display-3 text-white mb-md-4">Would you like to put your product up for Auction?</h3>
-                      <a href className="bg-gold btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Join Us</a>
+                      <a href="/Uploader" className="bg-gold btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Join Us</a>
                     </div>
                   </div>
                 </div>
@@ -87,7 +88,7 @@ function Home() {
                     <img className="card-img-top" src={"img/" + u.img} alt="" height={300} />
                     <div className="card-body bg-white p-4">
                       <div className="d-flex align-items-center mb-3">
-                        <a className="bg-gold btn btn-primary" >
+                        <a className="bg-gold btn btn-primary">
                         <i class="fa-solid fa-gavel"></i>
                         </a>
                         <h5 className="m-0 ml-3 text-truncate">

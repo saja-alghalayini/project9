@@ -7,14 +7,12 @@ import { Link } from 'react-router-dom';
 function Show(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost/redux-project9/API/updateUser.php?id=1`)
+    axios.get(`http://localhost/project-9/api/API/updateUser.php?id=1`)
       .then((res) => {
         //  console.log(res)
         const data = res.data;
         setUsers(data);
-
       });
-
   })
 
   return (
