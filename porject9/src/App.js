@@ -2,7 +2,7 @@ import { Routes, BrowserRouter, Route, Link } from 'react-router-dom';
 import Userinfo from './users/UserInfo';
 import UpdateInfo from './users/updateUser';
 import About from './static/about';
-import Contact from './static/contact';
+import ContactUs from './static/contact';
 import Adminlogin from './admin/AdminLogin';
 import Dashboard from './admin/Dash';
 import Auction from './admin/Auction';
@@ -28,7 +28,7 @@ function App() {
       <Route exact path='/user' element={<Userinfo />} />
       <Route path='/updateInfo' element={<UpdateInfo />} />
       <Route path='/about' element={<About />} />
-      <Route path='/contact' element={<Contact />} />
+      <Route path='/contact' element={<ContactUs />} />
       <Route path="/loginA" element={<Adminlogin />} />
       <Route path="/auction" element={<Auction />} /> 
       <Route path="/dashboard" element={<Dashboard />} /> 
