@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -56,23 +57,23 @@ function Footer() {
           <div className="col-lg-3 col-md-6 mb-5">
             <h4 className="text-primary mb-4">Quick Links</h4>
             <div className="d-flex flex-column justify-content-start">
-              <a className="text-white mb-2" href="#">
+              <a className="text-white mb-2" href="/">
                 <i className="fa fa-angle-right mr-2" />
                 Home
               </a>
-              <a className="text-white mb-2" href="#">
+              <a className="text-white mb-2" href="/about">
                 <i className="fa fa-angle-right mr-2" />
                 About Us
               </a>
-              <a className="text-white mb-2" href="#">
+              <a className="text-white mb-2" href="/all">
                 <i className="fa fa-angle-right mr-2" />
-                Our Services
+                All Product
               </a>
-              <a className="text-white mb-2" href="#">
+              <a className="text-white mb-2" href="/Uploader">
                 <i className="fa fa-angle-right mr-2" />
-                Our Projects
+                Add product
               </a>
-              <a className="text-white" href="#">
+              <a className="text-white" href="contact">
                 <i className="fa fa-angle-right mr-2" />
                 Contact Us
               </a>

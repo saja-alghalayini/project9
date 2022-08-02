@@ -4,7 +4,7 @@ import axios from 'axios';
 export const login=(email,password)=> async dispatch => {
 
     try{
-        const res = await axios.get('http://localhost/logreg/backend/login.php?email='+email+'&password='+password);
+        const res = await axios.get('http://localhost/project-9/porject9/backend/login.php?email='+email+'&password='+password);
         dispatch( {
             type: GET_ADMIN,
             payload: res.data
@@ -20,23 +20,7 @@ export const login=(email,password)=> async dispatch => {
 }
 
 
-export const getUsers = () => async dispatch => {
 
-    try{
-        const res = await axios.get(`https://countriesnow.space/api/v0.1/countries/population/cities`)
-        dispatch( {
-            type: GET_USERS,
-            payload: res.data.data
-        })
-    }
-    catch(e){
-        dispatch( {
-            type: USERS_ERROR,
-            payload: console.log(e),
-        })
-    }
-
-}
 
 export const logout=()=> dispatch => {
 

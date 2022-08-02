@@ -17,15 +17,14 @@ export default function(state = initialState, action){
             }else{
                 return{
                     ...state,
-                    error:'Username/ email or password is invalid',
+                    error:' email or password is invalid',
                     loading:false,
                 }
             }
         case 'logout':
-            return{...state,
-                admin:'',
-                error: '',
-            }
+           
+                sessionStorage.clear();
+           
         default: return state
     }
 
