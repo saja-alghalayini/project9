@@ -99,11 +99,11 @@ function Login() {
                                   onChange={(e) => setPassword(e.target.value)}
                                   required
                                 />
-                                
+
                               </div>
                             </div>
                             <div className="d-flex flex-row align-items-center mb-4">
-                              <input type="submit" defaultValue="Sign up" style={{ color: '#252531', borderColor: "#252531", backgroundColor: "#dfb163", borderRadius: "5px" }} className="w-100 h-100" value={'Login'} onClick={() => dispatch(login(email, password))}/>
+                              <input type="submit" defaultValue="Sign up" style={{ color: '#252531', borderColor: "#252531", backgroundColor: "#dfb163", borderRadius: "5px" }} className="w-100 h-100" value={'Login'} onClick={() => dispatch(login(email, password))} />
                             </div>
 
                             <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 id='Error-div'">

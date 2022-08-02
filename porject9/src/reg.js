@@ -8,8 +8,7 @@ function Signup() {
   const dispatch = useDispatch();
   const error = useSelector(state => state.register);
 
-  const handleSubmit = (e) => {
-    e.
+  const handleSubmit = () => {
     dispatch(signup());
 
   }
