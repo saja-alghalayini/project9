@@ -82,7 +82,7 @@ function Uploader() {
 <div>
         
         <div className="container">
-            <div className="row col-6">
+            <div className="row ">
                 
        
     <p className='fs-3  text-danger'>{response}</p>

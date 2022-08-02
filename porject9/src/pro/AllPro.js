@@ -38,11 +38,11 @@ function AllPro() {
             <div className="col-md-4 mt-5" style={{borderRadius:'20% '}}>
               <div className="card" >
                 <img src={"img/" + u.img} className="card-img-top" style={{height:'250px'}} alt="..." />
-                <div className="card-body">
+                <div className="card-body" style={{height:'300px'}}>
                   <h5 className="card-title">{u.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">{u.min_price}</h6>
+                  <h6 className="card-subtitle mb-2 text-muted">Jod {u.min_price}</h6>
                   <p className="card-text">{u.description}</p>
-                  <a href={'/single/' + u.id} className="btn btn-primary mr-2"><i className="fas fa-link"></i> Join Auction</a>
+                  <a href={'/single/' + u.id} className="btn btn-primary mr-2" style={{bottom:'0'}}><i className="fas fa-link"></i> Join Auction</a>
 
                 </div>
               </div>
