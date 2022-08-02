@@ -11,7 +11,7 @@ function Userinfo(props) {
   const [user, setUsers] = useState([]);
   useEffect(() => {
     // $id='1';
-    axios.get(`http://localhost/redux-project9/API/userInfo.php`)//.$id
+    axios.get(`http://localhost/project-9/api/API/userInfo.php`)//.$id
     //1&firstName=duaa&lastName=dua&email=dua@mail.com&phone=0771020304&password=asdf1234
       .then((res) => {
         //  console.log(res)

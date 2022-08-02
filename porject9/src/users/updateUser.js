@@ -14,7 +14,7 @@ function UpdateInfo() {
 
     const Update = () => {
                  // http://localhost/redux-project9/API/updateUser.php?id=1&firstname=${firstname}&lastname=${lastname}&email=${email}&phone=${password}&password=${phone}
-        axios.get(`http://localhost/redux-project9/API/updateUser.php?id=1&firstname=${firstname}&lastname=${lastname}&email=${email}&phone=${phone}&address=${address}&password=${password}`)
+        axios.get(`http://localhost/project-9/api/API/updateUser.php?id=1&firstname=${firstname}&lastname=${lastname}&email=${email}&phone=${phone}&address=${address}&password=${password}`)
             .then((data) => {
                 console.log("success!");
                 setSubmit(!isSubmit)
