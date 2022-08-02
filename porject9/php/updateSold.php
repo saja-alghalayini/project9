@@ -20,11 +20,12 @@ if (!$con) {
 
 
 
-  $id = $_REQUEST['id'];
+  $id =$_REQUEST['id'];
+  $user_id=$_REQUEST['user_id'];
   
  
   
-  $sql = "UPDATE products SET is_sold= 1 WHERE id = '$id'";
+  $sql = "UPDATE products SET is_sold=1,user_id='$user_id' WHERE id='$id';";
   
   mysqli_query($con,$sql);
   
