@@ -26,7 +26,8 @@ if(isset($_POST['name'])){
     $name=mysqli_real_escape_string($conn,$_POST['name']);
     $descc=mysqli_real_escape_string($conn,$_POST['desc']);
     $price=mysqli_real_escape_string($conn,$_POST['price']);
-
+    $owner_id=mysqli_real_escape_string($conn,$_POST['owner_id']);
+   
     // print_r($files);
 
     // $desc=$files['desc'];
@@ -63,7 +64,7 @@ if(isset($_POST['name'])){
 
 
             if(move_uploaded_file($templocation,$file_destination)){
-                $connection="INSERT INTO products (name,description,img,min_price)VALUES('$name','$descc','$new_file_name','$price')";
+                $connection="INSERT INTO products (name,description,img,min_price,owner_id)VALUES('$name','$descc','$new_file_name','$price','$owner_id')";
                 if(mysqli_query($conn,$connection)){
                     echo ' success';
                 }else{

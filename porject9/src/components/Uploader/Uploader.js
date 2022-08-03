@@ -9,6 +9,11 @@ import Footer from "../../components/Footer";
 
 
 function Uploader() {
+    let owner_id = sessionStorage.getItem("user_info");
+
+
+
+
     const [data, setdata] = useState('');
     const [response, setresponse] = useState('')
 
@@ -50,6 +55,7 @@ function Uploader() {
             formData.append('name', name);
             formData.append('desc', desc);
             formData.append('price', price);
+            formData.append('owner_id', owner_id);
 
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'http://localhost/project-9/porject9/php/upload.php', true);
@@ -123,6 +129,7 @@ function Uploader() {
                                                     <p className='fs-3  text-danger'>{response}</p>
                                                     <form className="mx-1 mx-md-4">
                                                         <div className="d-flex flex-row align-items-center mb-4">
+                                                            <input type='hidden' value={owner_id}/>
                                                             {/* <i className="fas fa-user fa-lg me-3 fa-fw" style={{ color: '#252531' }} /> */}
                                                             <div className="form-outline flex-fill mb-0">
                                                                 <label className="form-label" htmlFor="form3Example1c" style={{ color: '#252531' }}>
