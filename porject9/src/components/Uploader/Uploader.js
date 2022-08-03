@@ -38,6 +38,7 @@ function Uploader() {
     const selectedFile = useRef();
 
     const uploader = async () => {
+        if (owner_id){
         if (price === '') {
             setresponse('Please select a starting price ')
         }
@@ -75,6 +76,10 @@ function Uploader() {
 
         if (selectedFile.current.files.length === 0 && name === '') {
             setresponse('Please fill in all fields');
+        }
+        }
+        else{
+            window.location.href='/login'
         }
         // console.log(name);
         // console.log(selectedFile.current.files);

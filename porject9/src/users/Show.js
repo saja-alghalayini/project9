@@ -36,7 +36,7 @@ function Show(props) {
       {users.map((data) =>
 
         <>
-          <div className="centeruser mb-5" style={{ marginTop: '14%', marginBottom: '60%' }}>
+          <div className="centeruser " style={{ marginTop: '14%', marginBottom: '60%' }}>
             <div className="containerUser mb-5">
               <div className="left">
                 <div className="photo">
