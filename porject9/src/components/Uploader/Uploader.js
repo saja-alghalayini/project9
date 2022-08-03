@@ -82,10 +82,10 @@ function Uploader() {
 <div>
         
         <div className="container">
-            <div className="row ">
+            <div className="row col-6">
                 
        
-    <p className='fs-3  text-danger'>{response}</p>
+    <p ><h3 className='fs-3  text-danger'>{response}</h3></p>
 <form action="" id='Form'>
 
 

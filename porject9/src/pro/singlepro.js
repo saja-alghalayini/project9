@@ -226,6 +226,7 @@ console.log(a, 'roa');
               
               
               </div>
+            
               <div class="alert alert-success" role="alert" id='user' style={{display:'none'}}>
               Congratulations!! you won this auction
 Go to your profile page to complete the purchase

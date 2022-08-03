@@ -67,7 +67,7 @@ function Navbar() {
                 <div className="container-fluid position-relative" style={{ zIndex: 9 }}>
                     <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
                         <a href="/" className="navbar-brand">
-                            <img src='/img/auction-logo.png' style={{width:'30%'}}/>
+                            <img src='https://cdn.discordapp.com/attachments/965674870987980901/1003999859533152287/Untitled-3.png' style={{width:'150px'}}/>
                             {/* <h1 className="m-0 display-5 text-white">
                                 <span className="text-primary">i</span>DESIGN
                             </h1> */}
