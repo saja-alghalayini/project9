@@ -12,7 +12,9 @@ require "connection.php";
         $q = $conn->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
+        
         die("Could not connect to the database $dbname :" . $e->getMessage());
+
     }
      while ($row = $q->fetch()): 
             echo htmlspecialchars($row['email']);
