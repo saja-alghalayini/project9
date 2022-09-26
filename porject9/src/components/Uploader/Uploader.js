@@ -38,6 +38,7 @@ function Uploader() {
     const selectedFile = useRef();
 
     const uploader = async () => {
+        if (owner_id){
         if (price === '') {
             setresponse('Please select a starting price ')
         }
@@ -75,6 +76,10 @@ function Uploader() {
 
         if (selectedFile.current.files.length === 0 && name === '') {
             setresponse('Please fill in all fields');
+        }
+        }
+        else{
+            window.location.href='/login'
         }
         // console.log(name);
         // console.log(selectedFile.current.files);
@@ -129,6 +134,7 @@ function Uploader() {
                                                     <p className='fs-3  text-danger'>{response}</p>
                                                     <form className="mx-1 mx-md-4">
                                                         <div className="d-flex flex-row align-items-center mb-4">
+                                                            <input type='hidden' value={owner_id}/>
                                                             {/* <i className="fas fa-user fa-lg me-3 fa-fw" style={{ color: '#252531' }} /> */}
                                                             <div className="form-outline flex-fill mb-0">
                                                                 <label className="form-label" htmlFor="form3Example1c" style={{ color: '#252531' }}>
