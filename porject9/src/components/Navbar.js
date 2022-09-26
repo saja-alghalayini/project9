@@ -1,17 +1,18 @@
 import React from 'react';
 import { Routes, BrowserRouter, Route, Link } from 'react-router-dom';
-import {useSelector,useDispatch } from 'react-redux';
-import {logout} from "../action/index";
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from "../action/index";
 
-import { UilBookMedical } from '@iconscout/react-unicons'
-import { UilDiamond } from '@iconscout/react-unicons'
-import { UilPadlock } from '@iconscout/react-unicons'
-import { UilPhone } from '@iconscout/react-unicons'
+import { UilBookMedical } from '@iconscout/react-unicons';
+import { UilDiamond } from '@iconscout/react-unicons';
+import { UilPadlock } from '@iconscout/react-unicons';
+import { UilPhone } from '@iconscout/react-unicons';
+
 
 function Navbar() {
 
-    const dispatch=useDispatch();
-  let user_id= sessionStorage.getItem("user_info");
+    const dispatch = useDispatch();
+    let user_id = sessionStorage.getItem("user_info");
     return (
         <>
             {/* Topbar Start */}
@@ -20,23 +21,26 @@ function Navbar() {
                     <div className="row">
                         <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                             <div className="d-inline-flex align-items-center">
-                           
-                {!user_id &&
-                <a href="/login" className="btn-login">
-                  <span className="text-white px-3" id="loginBtn"/> Login
-                </a>}
-                <span className="text-white">|</span>
-                {!user_id &&
-                <a href="/register" className="btn-startgames">
-                  <span className="text-white pr-3" id="joinUstBtn"/> Register
-                </a>}
-                {user_id &&
-                <a href="/" onClick={()=>dispatch(logout())}>
-                  <span className="text-white pr-3" id="logoutBtn"/> Logout
-                </a>}
-                               
-                                
-                               
+
+                                {!user_id &&
+                                    <a href="/login" className="btn-login">
+                                        <span className="text-white " id="loginBtn" /> Login 
+                                    </a>}
+                                    
+                                <span className="text-white pl-2">|</span>
+                                {!user_id &&
+                                    <a href="/register" className="btn-startgames">
+                                        <span className="text-white pr-2" id="joinUstBtn" /> Register
+                                    </a>}
+                                {user_id &&
+                                    <a href="/user">
+                                        <span className="text-white " id="" /> Profile
+                                    </a>}
+                                    <span className="text-white pl-2">|</span>
+                                {user_id &&
+                                    <a href="/" onClick={() => dispatch(logout())}>
+                                        <span className="text-white pl-2" id="logoutBtn" /> Logout
+                                    </a>}
                             </div>
                         </div>
                         <div className="col-md-6 text-center text-lg-right">
@@ -64,10 +68,10 @@ function Navbar() {
             {/* Topbar End */}
             {/* Navbar Start */}
             <div className="container-fluid position-relative nav-bar p-0">
-                <div className="container-fluid position-relative" style={{ zIndex: 9 }}>
+                <div className="container position-relative" style={{ zIndex: 9 }}>
                     <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
                         <a href="/" className="navbar-brand">
-                            <img src='/img/auction-logo.png' style={{width:'30%'}}/>
+                            <img src='https://media.discordapp.net/attachments/1002099207177523221/1004000082548510871/Untitled-3.png?width=881&height=256' style={{ width: '150px' }} />
                             {/* <h1 className="m-0 display-5 text-white">
                                 <span className="text-primary">i</span>DESIGN
                             </h1> */}
@@ -85,30 +89,30 @@ function Navbar() {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav ml-auto py-0">
-                                <a href="/" className="nav-item nav-link active">
+                                <a href="/" className="nav-item nav-link ">
                                     Home
                                 </a>
                                 <a href="/all" className="nav-item nav-link">
                                     All Product
-                                    <UilDiamond/>
+                                    {/* <UilDiamond /> */}
                                 </a>
                                 <a href="/about" className="nav-item nav-link">
                                     About
                                 </a>
-            
+
 
                                 <a href="/contact" className="nav-item nav-link">
                                     Contact
-                                    <UilPhone/>
+                                    {/* <UilPhone /> */}
                                 </a>
                                 <a href="/Uploader" className="nav-item nav-link ">
-                                    Add auction
-                                <UilBookMedical/>
+                                    Add Product
+                                    {/* <UilBookMedical /> */}
                                 </a>
-                                <a href="#" className="nav-item nav-link disabled  btn" >
+                                {/* <a href="#" className="nav-item nav-link disabled  btn" >
                                     Shop
-                                <UilPadlock/>
-                                </a>
+                                    <UilPadlock />
+                                </a> */}
                             </div>
                         </div>
                     </nav>
@@ -116,7 +120,7 @@ function Navbar() {
             </div>
             {/* Navbar End */}
             {/* Under Nav Start */}
-            {/* <div className="container-fluid bg-white py-3">
+            <div className="container-fluid bg-white py-3">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 text-left mb-3 mb-lg-0">
@@ -148,7 +152,7 @@ function Navbar() {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
             {/* Under Nav End */}
         </>
     )

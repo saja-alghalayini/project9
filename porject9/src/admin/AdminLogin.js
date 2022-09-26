@@ -28,7 +28,7 @@ function AdminLogin() {
         const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if(emailRegex.test(email)){
           setEmailErorr('');
-          if (email==='admin@admin.com') {
+          if (email==='admin@mail.com') {
             setEmailErorr('');
             if (password==='admin2022') {
               window.location.href='/dashboard';

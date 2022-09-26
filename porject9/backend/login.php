@@ -17,6 +17,6 @@ require "connection.php";
 
     }
      while ($row = $q->fetch()): 
-            echo htmlspecialchars($row['email']);
+            echo htmlspecialchars($row['user_id']);
      endwhile; 
      ?>

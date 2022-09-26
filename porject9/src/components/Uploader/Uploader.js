@@ -129,7 +129,6 @@ function Uploader() {
                                                     <p className='fs-3  text-danger'>{response}</p>
                                                     <form className="mx-1 mx-md-4">
                                                         <div className="d-flex flex-row align-items-center mb-4">
-                                                            <input type='hidden' value={owner_id}/>
                                                             {/* <i className="fas fa-user fa-lg me-3 fa-fw" style={{ color: '#252531' }} /> */}
                                                             <div className="form-outline flex-fill mb-0">
                                                                 <label className="form-label" htmlFor="form3Example1c" style={{ color: '#252531' }}>

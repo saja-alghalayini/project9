@@ -38,6 +38,7 @@ function Signup() {
             </div>
           </div>
         </div>
+
         {/* Page Header end */}
         <div className='row'>
           <section className="vh-100 w-100" style={{ backgroundColor: "#F3F6FF"}}>
@@ -62,9 +63,12 @@ function Signup() {
                             <div className="d-flex flex-row align-items-center mb-4">
                               <i className="fas fa-user fa-lg me-3 fa-fw" style={{ color: '#252531' }} />
                               <div className="form-outline flex-fill mb-0">
+                                
                                 <label className="form-label" htmlFor="form3Example1c" style={{ color: '#252531' }}>
                                   Your Name
                                 </label>
+
+
                                 <input
                                   type="text"
                                   id="form3Example1c"
@@ -75,6 +79,8 @@ function Signup() {
                                 <span>{error.usernameError}</span>
                               </div>
                             </div>
+
+
                             <div className="d-flex flex-row align-items-center mb-4">
                               <i className="fas fa-envelope fa-lg me-3 fa-fw" style={{ color: '#252531' }} />
                               <div className="form-outline flex-fill mb-0">
